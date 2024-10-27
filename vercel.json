@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "lms/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "lms/wsgi.py"
+      }
+    ],
+   
+    "installCommand": "pip install -r requirements.txt",
+    "buildCommand": "python manage.py collectstatic --noinput"
+  }
+  
