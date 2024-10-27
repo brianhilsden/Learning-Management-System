@@ -133,7 +133,7 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'LMS API',
-    'DESCRIPTION': 'This API is designed to power a robust Learning Management System, providing endpoints for managing courses, user registrations, enrollments, and role-based access control. \
+    'DESCRIPTION': 'This Django REST API is designed to power a robust Learning Management System, providing endpoints for managing courses, user registrations, enrollments, and role-based access control. \
                     Key features include JWT-based user authentication, secure user registration, course management, and enrollment tracking. \
                     Instructors, students, and administrators can seamlessly interact with the system, leveraging various access levels to perform \
                     actions like course creation, assignment submissions, grading, and progress tracking. \
