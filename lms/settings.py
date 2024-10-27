@@ -142,8 +142,9 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,  # Serves the schema JSON/YAML only on specific endpoints,
   'SERVERS': [
+      {'url': 'https://learning-management-system-alpha-eosin.vercel.app', 'description': 'Production server'},
     {'url': 'http://localhost:8001', 'description': 'Local development server'},
-    {'url': 'https://api.yourdomain.com', 'description': 'Production server'},
+    
 ],
 
 }
