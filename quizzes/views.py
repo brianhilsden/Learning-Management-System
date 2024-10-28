@@ -133,7 +133,7 @@ class StudentQuizAttemptViewSet(viewsets.ModelViewSet):
         return super().destroy(request, *args, **kwargs)
 
     @extend_schema(
-        summary='Submit a list of answer IDs for a quiz attempt',
+        summary='Submit a list of answer IDs for a quiz attempt and get back data including scores',
         request=SubmitQuizSerializer,
         responses={200: StudentQuizAttemptDetailSerializer},
         tags=["Quiz attempt"]
