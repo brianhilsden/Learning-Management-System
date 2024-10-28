@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from urllib.parse import urlparse
 from dotenv import load_dotenv
+from datetime import timedelta
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-g=6p+$0j-+ztu6n)48z)ozp9=&t1f6q^pxooo&$1h1k!(_b55w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1','localhost', '.vercel.app']
 
 
 # Application definition
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'enrollments',
     'drf_spectacular',
     'corsheaders',
+    'quizzes'
 ]
 
 MIDDLEWARE = [
@@ -150,6 +152,13 @@ SPECTACULAR_SETTINGS = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': timedelta(hours=1),  
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7),  
+}
 
 
 # Internationalization

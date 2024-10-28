@@ -103,6 +103,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             'first_name': user.first_name,
             'last_name': user.last_name,
             'role': user.role,
+            'id':user.id,
             'profile_picture': user.profile_picture
         })
     
