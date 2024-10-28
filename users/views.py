@@ -28,6 +28,22 @@ class UsersListView(generics.ListAPIView):
         """
         return super().get(request, *args, **kwargs)
 
+class UserView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    
+    @extend_schema(
+        summary="Retrieve user by ID",
+        description="Retrieve the details of a user by their ID.",
+        responses={200: UserSerializer, 404: OpenApiResponse(description="User not found.")},
+        tags=["Users"]
+    )
+    def get(self, request, *args, **kwargs):
+        """
+        Handles GET requests to retrieve a user by their ID.
+        """
+        return super().get(request, *args, **kwargs)
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     permission_classes = [AllowAny]
