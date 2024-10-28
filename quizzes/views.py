@@ -90,7 +90,7 @@ class StudentQuizAttemptViewSet(viewsets.ModelViewSet):
         return super().retrieve(request, *args, **kwargs)
 
     @extend_schema(
-        summary='Create a new quiz attempt',
+        summary='Create a new quiz attempt for the authenticated student',
         request=CreateQuizAttemptSerializer,
         responses={201: StudentQuizAttemptDetailSerializer},
         tags=["Quiz attempt"]
@@ -133,7 +133,7 @@ class StudentQuizAttemptViewSet(viewsets.ModelViewSet):
         return super().destroy(request, *args, **kwargs)
 
     @extend_schema(
-        summary='Submit answers for a quiz attempt',
+        summary='Submit a list of answer IDs for a quiz attempt',
         request=SubmitQuizSerializer,
         responses={200: StudentQuizAttemptDetailSerializer},
         tags=["Quiz attempt"]
