@@ -96,8 +96,6 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
 
     @extend_schema(
         responses={200: CommentSerializer(many=True)},
@@ -152,5 +150,4 @@ class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+
