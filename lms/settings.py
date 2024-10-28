@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'enrollments',
     'drf_spectacular',
     'corsheaders',
-    'quizzes'
+    'quizzes',
+    'discussionForums'
 ]
 
 MIDDLEWARE = [
