@@ -13,4 +13,5 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lms.settings')
 
+# Change to app for vercel deployment, and application to work locally
 app = get_wsgi_application()
